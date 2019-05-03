@@ -10,7 +10,7 @@ python3 -m pip install PyInquirer pycrypto
 ```bash
 python3 main.py
 ```
-This will great you with the options to login or signup.
+This will greet you with the options to login or signup.
 Following that it will pull your encrypted vault saved in AWS DynamoDB.
 You can then create, view, edit, and delete the accounts and passwords saved in the vault.
 Any changes made to the vault will be uploaded to the cloud after they are made locally.
