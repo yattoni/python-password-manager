@@ -24,3 +24,5 @@ To authenticate requests with the backend AWS Lambda functions, the key is hashe
 The server then applies a salt generated when the account was created before hashing it again to compare with the hash stored in DynamoDB to authenticate you.
 Finally, the encrypted vault is sent back to your computer.
 These requests are sent using over HTTPS using TLS to prevent man in the middle attacks.
+
+A password generator is also included when creating new or editing existing passwords for accounts.
