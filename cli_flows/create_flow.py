@@ -6,6 +6,10 @@ from lib.common import custom_style, validate_nonempty
 from model.account import Account
 
 def run_create_flow(session):
+    """
+    Command line interface questions for creating a new account.
+    Asks details of account to create, adds account to vault locally and then updates vault in cloud.
+    """
     questions = [
     {
             'type': 'input',

@@ -4,6 +4,10 @@ from lib.common import custom_style, validate_password_length
 from lib.crypto import generate_password
 
 def run_generate_password_flow():
+    """
+    Command line interface questions for using password generator.
+    Asks questions about options for password generator then calls password generator.
+    """
     questions = [
         {
             'type': 'input',

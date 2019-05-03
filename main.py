@@ -9,6 +9,11 @@ from cli_flows.delete_flow import run_delete_flow
 
 
 def run_login_flow():
+    """
+    Command line interface questions for logging in or signing up.
+    Asks whether to login or signup and then credentials.
+    Attempts to login or signup.
+    """
     questions = [
         {
             'type': 'list',
@@ -62,11 +67,14 @@ def run_login_flow():
 
 
 def run_main_flow(session):
+    """
+    Command line interface questions for what user wants to do now that they are logged in.
+    """
     questions = [
         {
             'type': 'list',
             'name': 'theme',
-            'message': 'What do you want to do?',
+            'message': 'What do you want to do? Ctrl+C to exit.',
             'choices': [
                 {
                     'name': 'Create a new account',
@@ -97,6 +105,9 @@ def run_main_flow(session):
 
 
 def main():
+    """
+    Run login flow and then continuously run the main flow until user exits.
+    """
     session = run_login_flow()
     while True:
         run_main_flow(session)

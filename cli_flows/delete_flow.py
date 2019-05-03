@@ -4,6 +4,10 @@ from lib.api import update_vault
 from lib.common import custom_style
 
 def run_delete_flow(session):
+    """
+    Command line interface questions for deleting an account.
+    Asks which account to delete, deletes from vault locally and then updates vault in cloud.
+    """
     account_names = session.get_account_names()
 
     if len(account_names) == 0:

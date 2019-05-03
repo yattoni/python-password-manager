@@ -5,6 +5,10 @@ from lib.api import update_vault
 from lib.common import custom_style, validate_nonempty
 
 def run_edit_flow(session):
+    """
+    Command line interface questions for editing an account.
+    Asks what attributes to edit, edits accoutn in vault locally and then updates vault in cloud.
+    """
     account_names = session.get_account_names()
 
     if len(account_names) == 0:

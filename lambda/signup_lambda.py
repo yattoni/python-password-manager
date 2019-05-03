@@ -6,6 +6,12 @@ from Crypto.Random import get_random_bytes
 from hashlib import pbkdf2_hmac
 
 def lambda_handler(event, context):
+    """
+    Lambda function for POST to /signup.
+    Checks if account with given username exists or not.
+    If does exist, returns 400 error.
+    If not, creates new salt for authentication hash, and stores salted hash in new entry in DynamoDB.
+    """
     event_body = json.loads(event['body'])
     username = event_body['username']
     auth_hash = event_body['auth_hash']

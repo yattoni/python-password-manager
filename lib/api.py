@@ -9,6 +9,11 @@ from model.session import Session
 
 
 def login(username, master_password):
+    """
+    Posts username and authentication hash to /login.
+    Decrypts vault on successful login.
+    Returns new Session.
+    """
     print('Logging in...')
     url = api_base_url + '/login'
 
@@ -36,6 +41,11 @@ def login(username, master_password):
     return session
 
 def signup(username, master_password):
+    """
+    Posts username and authentication hash to /signup.
+    Calls update vault with empty vault on successful signup.
+    Returns new Session.
+    """
     print('Signing up...')
     url = api_base_url + '/signup'
 
@@ -59,6 +69,9 @@ def signup(username, master_password):
 
 
 def update_vault(session):
+    """
+    Posts username, authentication hash and encrypted vault to /update.
+    """
     print('Updating vault in cloud...')
     url = api_base_url + '/update'
 

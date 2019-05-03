@@ -3,6 +3,10 @@ from PyInquirer import prompt
 from lib.common import custom_style
 
 def run_read_flow(session):
+    """
+    Command line interface questions for viewing an account.
+    Asks which account to view and then prints attributes to console.
+    """
     account_names = session.get_account_names()
 
     if len(account_names) == 0:
