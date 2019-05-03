@@ -8,7 +8,7 @@ import string
 import base64
 
 def get_key(username, master_password):
-    return pbkdf2_hmac('sha256', master_password.encode(), username.encode(), 100, 32)
+    return pbkdf2_hmac('sha256', master_password.encode(), username.encode(), 100000, 32)
 
 def get_auth_hash(username, master_password):
     return pbkdf2_hmac('sha256', get_key(username, master_password), master_password.encode(), 1, 32)
